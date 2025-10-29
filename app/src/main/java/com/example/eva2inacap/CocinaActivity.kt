@@ -16,7 +16,6 @@ class CocinaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocina)
 
-        // Inicializar vistas
         tvStatusGas = findViewById(R.id.tvStatusGas)
         tvPressureValue = findViewById(R.id.tvPressureValue)
         tvGasLevelValue = findViewById(R.id.tvGasLevelValue)
@@ -35,15 +34,15 @@ class CocinaActivity : AppCompatActivity() {
         tvPressureValue.text = "$pressure kPa"
         tvGasLevelValue.text = "$gasLevel ppm"
 
-        // 💡 Lógica de la Escala de Riesgo (Rojo, Amarillo, Verde)
+        // 💡 Lógica de la Escala de Riesgo
         when {
-            // ROJO: Riesgo Alto (Presión alta O Nivel de Gas peligroso)
+            // ROJO: Riesgo Alto
             pressure > 35 || gasLevel > 60 -> {
                 tvStatusGas.text = "🔴 ALERTA: Fuga O Presión Anormal"
                 tvStatusGas.setBackgroundColor(Color.RED)
                 tvStatusGas.setTextColor(Color.WHITE)
             }
-            // AMARILLO: Riesgo Moderado (Presión ligeramente alta O Nivel de Gas elevado)
+            // AMARILLO: Riesgo Moderado
             pressure > 30 || gasLevel > 30 -> {
                 tvStatusGas.text = "🟡 ADVERTENCIA: Nivel de Gas Elevado"
                 tvStatusGas.setBackgroundColor(Color.YELLOW)

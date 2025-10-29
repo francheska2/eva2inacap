@@ -38,15 +38,15 @@ class CalderasActivity : AppCompatActivity() {
         tvWaterLevelValue.text = "$waterLevel %"
         tvGasLevelValue.text = "$gasLevel unidades" // 💡 Mostrar el valor del gas
 
-        // 💡 Lógica de la Escala de Riesgo (Rojo, Amarillo, Verde)
+        // 💡 Lógica de la Escala de Riesgo
         when {
-            // ROJO: Riesgo Alto (Temperatura muy alta O Nivel de agua muy bajo O ALERTA DE GAS)
+            // ROJO: Riesgo Alto
             temperature > 110 || waterLevel < 20 || gasLevel > 7 -> {
                 tvStatusCalderas.text = "🔴 ALERTA: Falla Crítica o Fuga de Gas"
                 tvStatusCalderas.setBackgroundColor(Color.RED)
                 tvStatusCalderas.setTextColor(Color.WHITE)
             }
-            // AMARILLO: Riesgo Moderado (Temperatura elevada O Nivel de agua bajo O Gas elevado)
+            // AMARILLO: Riesgo Moderado
             temperature > 100 || waterLevel < 40 || gasLevel > 4 -> {
                 tvStatusCalderas.text = "🟡 ADVERTENCIA: Revisar Parámetros y Nivel de Gas"
                 tvStatusCalderas.setBackgroundColor(Color.YELLOW)
