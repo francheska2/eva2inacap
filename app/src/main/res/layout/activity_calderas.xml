@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -36,6 +37,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Nuevo Switch para Activar/Desactivar Sensor -->
+    <Switch
+        android:id="@+id/switchSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Sensor de Calderas Activo"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:checked="true"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloCalderas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <!-- Fin del nuevo Switch -->
+
     <TextView
         android:id="@+id/tvStatusCalderas"
         android:layout_width="0dp"
@@ -49,15 +65,16 @@
         android:text="Cargando Estado..."
         android:background="#88000000"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/tvTituloCalderas"
+        app:layout_constraintTop_toBottomOf="@id/switchSensor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Temperatura -->
     <TextView
         android:id="@+id/tvTemperatureLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temperatura Actual:"
+        android:text="Temperatura de Operación:"
         android:textSize="18sp"
         android:textColor="@android:color/white"
         android:layout_marginTop="40dp"
@@ -87,11 +104,12 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintTop_toBottomOf="@id/tvTemperatureValue" />
 
+    <!-- Nivel de Agua -->
     <TextView
         android:id="@+id/tvWaterLevelLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nivel de Agua/Líquido:"
+        android:text="Nivel de Agua:"
         android:textSize="18sp"
         android:textColor="@android:color/white"
         android:layout_marginTop="16dp"
@@ -121,11 +139,12 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintTop_toBottomOf="@id/tvWaterLevelValue" />
 
+    <!-- Nivel de Gas -->
     <TextView
         android:id="@+id/tvGasLevelLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nivel de Gas Detectado:"
+        android:text="Nivel de Gas (Riesgo):"
         android:textSize="18sp"
         android:textColor="@android:color/white"
         android:layout_marginTop="16dp"
